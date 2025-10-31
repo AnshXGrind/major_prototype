@@ -1,0 +1,71 @@
+{
+  "name": "medaid",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Your Health, Your Language, Your Aid - Multilingual healthcare PWA for India",
+  "keywords": ["healthcare", "pwa", "multilingual", "india", "offline-first"],
+  "author": "AnshXGrind",
+  "license": "MIT",
+  "homepage": "https://medaid.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnshXGrind/medaid.git"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^3.1.1",
+    "workbox-webpack-plugin": "^6.5.4",
+    "localforage": "^1.10.0",
+    "react-i18next": "^12.1.4",
+    "i18next": "^22.4.10",
+    "lucide-react": "^0.263.1",
+    "clsx": "^1.2.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@types/node": "^18.13.0",
+    "tailwindcss": "^3.2.6",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "eslint": "^8.34.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "format": "prettier --write src/**/*.{ts,tsx,css,md}",
+    "type-check": "tsc --noEmit",
+    "analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
+    "serve": "npx serve -s build -l 3000"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  }
+}

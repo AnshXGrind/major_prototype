@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedAid - Offline</title>
+    <style>
+        body {
+            font-family: 'Noto Sans Devanagari', system-ui, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            max-width: 400px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+        }
+        h1 { font-size: 2rem; margin-bottom: 1rem; }
+        p { font-size: 1.1rem; margin-bottom: 1rem; line-height: 1.6; }
+        .icon { font-size: 4rem; margin-bottom: 1rem; }
+        .retry-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        .retry-btn:hover {
+            background: #059669;
+        }
+        .emergency {
+            background: rgba(239, 68, 68, 0.2);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+            border: 1px solid rgba(239, 68, 68, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">📱</div>
+        <h1>MedAid - ऑफ़लाइन</h1>
+        <p>आप वर्तमान में ऑफ़लाइन हैं। कुछ सुविधाएं उपलब्ध नहीं हैं।</p>
+        <p>You are currently offline. Some features are unavailable.</p>
+        
+        <button class="retry-btn" onclick="window.location.reload()">
+            🔄 Retry / पुनः प्रयास करें
+        </button>
+        
+        <div class="emergency">
+            <strong>🚨 आपातकाल / Emergency</strong><br>
+            तत्काल सहायता के लिए 108 डायल करें<br>
+            For immediate help, dial 108
+        </div>
+        
+        <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">
+            आपका डेटा सुरक्षित रूप से संग्रहीत है<br>
+            Your data is safely stored locally
+        </p>
+    </div>
+    
+    <script>
+        // Check for connection and reload when back online
+        window.addEventListener('online', () => {
+            window.location.reload();
+        });
+        
+        // Show connection status
+        if (navigator.onLine) {
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
